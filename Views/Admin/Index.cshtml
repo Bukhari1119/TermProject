@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@if(Session["loginAdmin"] == null || (int)Session["loginAdmin"] != 1)
+{
+       <h2>Please login as admin!</h2>
+}
+else
+{
+    <h2>Admin Menu</h2>
+    <h3>Manage Users</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Admin/Add">Add User</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Admin/Show">See All Users</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Admin/Search">Search User</a>
+        </div>
+    </div>
+
+    <h3>Manage Admins</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Admin/AddAdmin">Add Admin</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Admin/ShowAdmin">See All Admins</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Admin/SearchAdmin">Search Admin</a>
+        </div>
+    </div>
+
+    <h3>Manage Destinations and Categories</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Destinations/AddDestination">Add Destination</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Destinations/ShowDestination">See All Destinations</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Destinations/SearchDestination">Search Destination</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Destinations/AddCategory">Add Category</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Destinations/ShowCategory">See All Categories</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Destinations/SearchCategory">Search Category</a>
+        </div>
+    </div>
+
+    <h3>Manage Gallery</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/Gallery/UploadImage">Upload Image</a>
+        </div>
+    </div>
+}

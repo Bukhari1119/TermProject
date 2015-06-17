@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "UploadImage";
+}
+
+<h2 class="page-header">Upload Image</h2>
+
+<form action="/Gallery/UploadImageConfirm" method="post" enctype="multipart/form-data">
+
+    <label>Select Image</label>
+    <input type="file" name="image" />
+    <br />
+    <label>Name: </label>
+    <input type="text" name="name" />
+    <br />
+    <label>Place: </label>
+    <input type="text" name="place" />
+    <br />
+    <input type="submit" value="Upload" />
+</form>

@@ -1,0 +1,24 @@
+﻿@model TermProject.Models.DestinationCategory
+@{
+    ViewBag.Title = "SearchCategoryResult";
+}
+
+<h2>Search Result</h2>
+@Html.ActionLink("Admin Menu", "Index", "Admin") Click Here to go to Admin Menu.
+<table class="table table-striped">
+    <tr>
+        <td>Primary Key</td>
+        <td>Name</td>
+        <td>description</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Name</td>
+        <td>@Model.Description</td>
+        <td><a href="/Destinations/UpdateCategory/@Model.Name">Update</a></td>
+        <td><a href="/Destinations/DeleteCategory/@Model.Name">Delete</a></td>
+    </tr>
+</table>
+

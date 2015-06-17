@@ -1,0 +1,31 @@
+﻿@model List<TermProject.Models.AdminTable>
+@{
+    ViewBag.Title = "ShowAdmin";
+}
+
+<h2>All Admins</h2>
+@Html.ActionLink("Admin Menu", "Index") Click Here to go to Admin Menu.
+<table class="table table-striped">
+    <tr>
+        <td>Primary Key</td>
+        <td>Name</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Id</td>
+            <td>@a.Name</td>
+            <td>@a.Username</td>
+            <td>@a.Email</td>
+            <td>@a.Password</td>
+            <td><a href="/Admin/UpdateAdmin/@a.Id">Update</a></td>
+            <td><a href="/Admin/DeleteAdmin/@a.Id">Delete</a></td>
+        </tr>
+    }
+</table>
+

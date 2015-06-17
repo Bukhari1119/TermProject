@@ -1,0 +1,29 @@
+﻿@model TermProject.Models.DestinationCategory
+@{
+    ViewBag.Title = "UpdateCategory";
+}
+
+<h2>Update Category</h2>
+@Html.ActionLink("Admin Menu", "Index", "Admin") Click Here to go to Admin Menu.
+<form method="post" action="/Destinations/UpdateCategoryConfirm/@Model.Name">
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-default" />
+        </div>
+    </div>
+</form>

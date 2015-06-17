@@ -1,0 +1,49 @@
+﻿@model TermProject.Models.DestinationTable
+@{
+    ViewBag.Title = "DeleteDestination";
+}
+
+<h2>Delete Destination</h2>
+@Html.ActionLink("Admin Menu", "Index", "Admin") Click Here to go to Admin Menu.
+<form method="post" action="/Destinations/DeleteDestinationConfirm/@Model.Id">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Id)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Image, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Image, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Image)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Description)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Category, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Category, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Category)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+    </div>
+</form>

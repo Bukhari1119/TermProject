@@ -1,0 +1,27 @@
+﻿@model TermProject.Models.AdminTable
+@{
+    ViewBag.Title = "SearchAdminResult";
+}
+
+<h2>Search Result</h2>
+@Html.ActionLink("Admin Menu", "Index") Click Here to go to Admin Menu.
+<table class="table table-striped">
+    <tr>
+        <td>Primary Key</td>
+        <td>Name</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td>Password</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.Name</td>
+        <td>@Model.Username</td>
+        <td>@Model.Email</td>
+        <td>@Model.Password</td>
+        <td><a href="/Admin/UpdateAdmin/@Model.Id">Update</a></td>
+        <td><a href="/Admin/DeleteAdmin/@Model.Id">Delete</a></td>
+    </tr>
+</table>

@@ -1,0 +1,29 @@
+﻿@model List<TermProject.Models.DestinationCategory>
+@{
+    ViewBag.Title = "ShowCategory";
+}
+
+<h2>All Destinations</h2>
+@Html.ActionLink("Admin Menu", "Index", "Admin") Click Here to go to Admin Menu.
+<table class="table table-striped">
+    <tr>
+        <td>Primary Key</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Name</td>
+            <td>@a.Name</td>
+            <td>@a.Description</td>
+            <td><a href="/Destinations/UpdateCategory/@a.Name">Update</a></td>
+            <td><a href="/Destinations/DeleteCategory/@a.Name">Delete</a></td>
+        </tr>
+    }
+</table>
+
+
+

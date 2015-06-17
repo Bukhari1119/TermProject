@@ -1,0 +1,28 @@
+﻿@model TermProject.Models.AdminTable
+@{
+    ViewBag.Title = "SearchAdmin";
+}
+
+<h2>Search</h2>
+@Html.ActionLink("Admin Menu", "Index") Click Here to go to Admin Menu.
+<br />
+<form method="post" action="/Admin/SearchAdminResult">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-1 control-label">
+                <label>ID</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" name="id" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="search" class="btn btn-default" />
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Register", "Register") if you don't have a local account.
+    </p>
+</form>

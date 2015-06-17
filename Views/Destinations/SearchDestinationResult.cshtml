@@ -1,0 +1,25 @@
+﻿@model TermProject.Models.DestinationTable
+@{
+    ViewBag.Title = "SearchDestinationResult";
+}
+
+<h2>Search Result</h2>
+@Html.ActionLink("Admin Menu", "Index", "Admin") Click Here to go to Admin Menu.
+<table class="table table-striped">
+    <tr>
+        <td>Primary Key</td>
+        <td>Name</td>
+        <td>Image</td>
+        <td>Category</td>
+        <td>Update</td>
+        <td>Delete</td>
+    </tr>
+    <tr>
+        <td>@Model.Id</td>
+        <td>@Model.Name</td>
+        <td>@Model.Image</td>
+        <td>@Model.Category</td>
+        <td><a href="/Destinations/UpdateDestination/@Model.Id">Update</a></td>
+        <td><a href="/Destinations/DeleteDestination/@Model.Id">Delete</a></td>
+    </tr>
+</table>

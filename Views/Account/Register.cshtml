@@ -1,0 +1,93 @@
+﻿@model TermProject.Models.UserTable
+@{
+    ViewBag.Title = "Register";
+}
+
+<script>
+
+</script>
+
+<h2>Register</h2>
+<form method="post" action="/Account/RegisterConfirm">
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+        </div>
+    </div>
+   
+    <div class="row" style="margin-top:5px">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
+    </div>
+   
+    <div class="row" style="margin-top:5px">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Username, new { @class = "col-md-2 control-label"})
+            <div class="col-md-4">
+                @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @id = "TextBoxUserName", @name="UserName" })
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:5px">
+        <div class="col-md-2"></div>
+        <div class="col-md-1">
+            <input type="button" value="Check" id="ButtonUserName" class="btn btn-info" />
+        </div>
+        <div class="col-md-9">
+            <label id="LabelUserName" class="label label-info">Click to check availability</label>
+        </div>
+    </div>
+   
+    <div class="row" style="margin-top:5px">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:5px">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+        <p>
+            @Html.ActionLink("Register", "Register") if you don't have a local account.
+        </p>
+</form>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+
+    $(document).ready(function () {
+        $('#ButtonUserName').click(function () {
+            var userName = $('#TextBoxUserName').val();
+            $.getJSON("/Account/CheckUserName?UserName=" + userName, function (data) {
+                if (data) {
+                    $('#LabelUserName').text("User already exists in database");
+
+                }
+                else {
+                    $('#LabelUserName').text("User Name is available");
+                }
+            });
+
+        });
+
+    });
+</script>
+
+
+

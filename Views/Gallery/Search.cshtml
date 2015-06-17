@@ -1,0 +1,49 @@
+﻿@model TermProject.Models.gallery
+@{
+    ViewBag.Title = "Search";
+}
+<h2>Search Gallery</h2>
+<br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-1 control-label">
+                <label>Place</label>
+            </div>
+            <div class="col-md-10">
+                <input type="text" name="place" id="Text"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+                <input type="button" value="Search" id="btn" />
+            </div>
+        </div>
+    </div>
+<div id="mydiv">
+    <ul id="mylist">
+
+    </ul>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+        $('#btn').click(function () {
+            var place = $('#Text').val();
+            $('#mylist li').remove();
+            $('#mylist h3').remove();
+            $('#mylist br').remove();
+            $.getJSON("/Gallery/SearchPlace?Place=" + place, function (data) {
+                $.each(data, function (i,a)
+                {
+                    $('#mylist').append('<h3>' + a.Name + '</h3>');
+                    $('#mylist').append('<li><img src=' + a.Image + ' height=300 width=500 /></li>');
+                    $('#mylist').append('<br />');
+                });
+            });
+        });
+
+    });
+</script>

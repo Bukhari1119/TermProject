@@ -1,0 +1,37 @@
+﻿@model List<TermProject.Models.gallery>
+@{
+    ViewBag.Title = "Gallery";
+}
+
+<ol class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li class="active">Gallery</li>
+</ol>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">@ViewBag.Message</h1>
+        </div>
+    </div>
+    @{ int count = 4;}
+    <div class="row">
+        @foreach (var a in @Model)
+        {
+            if (count % 4 == 0)
+            {
+                <br />
+                <div class="row"></div>
+            }
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <div class="caption">@a.Name</div>
+                    <img src=@a.Image />
+                </div>
+            </div>
+            count++;
+        }
+    </div>
+    @Html.ActionLink("Upload Image", "UploadImage", "Gallery") Click to upload image.
+</div>

@@ -1,0 +1,31 @@
+﻿@model List<TermProject.Models.DestinationCategory>
+@{
+    ViewBag.Title = "Destinations";
+}
+
+<ol class="breadcrumb">
+    <li><a href="Index">Home</a></li>
+    <li class="active">Destinations</li>
+</ol>
+
+
+@foreach (var a in Model)
+{ 
+    <h2 class="page-header">@a.Name</h2>
+    <div class="row">
+        
+        @foreach(var b in a.DestinationTables)
+        {
+            <div class="col-md-3">
+            <div class="thumbnail">
+                <h3>@b.Name</h3>
+                <a href="/Details/Details/@b.Id" class="thumbnail">
+                    <img src="@b.Image"
+                         alt="Ghoomo Phiro Pakistan Adventure Club">
+                </a>
+            </div>
+        </div>
+        }
+    </div>
+}
+
